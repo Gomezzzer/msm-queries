@@ -1,3 +1,5 @@
 class ApplicationController < ActionController::Base
-  skip_forgery_protection
+  def homepage
+    render({ :template => "misc_templates/home"})
+  end
 end
