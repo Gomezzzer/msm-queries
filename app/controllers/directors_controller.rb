@@ -5,17 +5,16 @@ class DirectorsController < ApplicationController
 
   render({ :template => "director_templates/list"})
   end
-
   def wisest
     @oldest = Director.where.not({ :dob => nil }).order({ :dob => :asc }).at(0)
 
-    render({ :template => "director_templates/eldest.hmtl.erb" })
+    render({ :template => "director_templates/eldest" })
   end
 
  def youngest
    @youngest = Director.order({ :dob => :desc }).at(0)
 
-   render({ :template => "director_templates/youngest.html.erb" })
+   render({ :template => "director_templates/youngest" })
  end
 
  def show 
